@@ -8,10 +8,8 @@ import {
 	configs as configAstro,
 	processors as processorAstro,
 } from "eslint-plugin-astro"
-import pluginTailwind from "eslint-plugin-better-tailwindcss"
 import pluginJsonc from "eslint-plugin-jsonc"
 import pluginJsxA11y from "eslint-plugin-jsx-a11y"
-// import pluginOxlint from "eslint-plugin-oxlint"
 import pluginReact from "eslint-plugin-react"
 import globals from "globals"
 import pluginTs from "typescript-eslint"
@@ -80,21 +78,6 @@ const config = pluginTs.config([
 		...pluginReact.configs.flat.recommended,
 		...pluginReact.configs.flat["jsx-runtime"],
 	},
-	{
-		files: [ASTRO_FILES, JSX_FILES],
-		plugins: {
-			"better-tailwindcss": pluginTailwind,
-		},
-		rules: {
-			...pluginTailwind.configs.recommended.rules,
-		},
-		settings: {
-			"better-tailwindcss": {
-				// Path to the entry file of the css-based Tailwind config
-				entryPoint: "src/styles/global.css",
-			},
-		},
-	},
 
 	// Astro
 	{
@@ -124,7 +107,7 @@ const config = pluginTs.config([
 		extends: [pluginJsonc.configs["flat/recommended-with-json"]],
 	},
 	{
-		files: ["**/*.jsonc", "**/.vscode/*.json", "**/tsconfig.json", "**/.oxlintrc.json"],
+		files: ["**/*.jsonc", "**/.vscode/*.json", "**/tsconfig.json"],
 		extends: [pluginJsonc.configs["flat/recommended-with-jsonc"]],
 		rules: {
 			"jsonc/no-comments": "off",
@@ -150,9 +133,6 @@ const config = pluginTs.config([
 	// Disable formatting rules
 	// configPrettier,
 	// pluginJsonc.configs["flat/prettier"],
-
-	// Disable rules available in oxlint
-	// ...pluginOxlint.configs["flat/recommended"]
 ])
 
 export default config

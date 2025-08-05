@@ -1,0 +1,48 @@
+---
+title: Welcome to Colorado Tech Community
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: |
+    While this space is intended primarily to serve Colorado, we welcome anybody
+    from anywhere in the world who has some attachment to the tech community of
+    Colorado: Coloradans, former Coloradans, hopeful future Coloradans, and some
+    people who heard this was a good place to rest their hat. You also do not have to work in tech to join Colorado Tech Community! This space is also open to anyone tech-adjacent in some capacity: designers, product managers, testers, makers, hobbyists, etc.
+  image:
+    file: ../../assets/all-are-welcome-here.jpg
+  actions:
+    - text: Read the rules, then...
+      link: /code-of-conduct
+      icon: external
+      variant: secondary
+    - text: Join us on Discord!
+      link: https://discord.gg/KTKQAvK3rR
+      icon: discord
+      variant: primary
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components"
+
+<CardGrid>
+	<LinkCard
+		title="Code of Conduct"
+		href="/code-of-conduct"
+		description="Please review these rules before
+participating in our community."
+	/>
+	<LinkCard
+		title="The CTC Way"
+		href="/the-ctc-way"
+		description="A guide to the vibe of Colorado Tech Community."
+	/>
+	<LinkCard
+		title="Jobs Forum Rules"
+		href="/jobs-forum-rules"
+		description="The #jobs forum has some specific rules of its own."
+	/>
+	<LinkCard
+		title="How to Help"
+		href="/how-to-help"
+		description="Here are some things you can do to help out the community."
+	/>
+</CardGrid>
